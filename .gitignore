@@ -1,6 +1,6 @@
 
 # Playwright
-/.features.gen
+.features.gen
 node_modules/
 /test-results/
 /playwright-report/
