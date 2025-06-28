@@ -45,6 +45,26 @@ This project automatically runs tests on every push and pull request to the `mai
 
 Go to GitHub Actions > the relevant workflow run > Artifacts section to download the `playwright-report`.
 
+## Running Tests with Docker
+
+1. Build the Docker image:
+   ```sh
+   docker build -t playwright-example .
+   ```
+2. Run the tests:
+   ```sh
+   docker run --rm playwright-example
+   ```
+
+To access the test report, you can mount the `playwright-report` folder as a volume:
+```sh
+# For Windows (PowerShell or CMD)
+docker run --rm -v %cd%\playwright-report:/app/playwright-report playwright-example
+
+# For Linux/MacOS
+docker run --rm -v $(pwd)/playwright-report:/app/playwright-report playwright-example
+```
+
 ## Additional Information
 
 - Playwright documentation: https://playwright.dev/
